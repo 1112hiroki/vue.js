@@ -1,15 +1,19 @@
 var app = new Vue({
   el: '#app',
   data: {
-    year: (new Date()).getFullYear()
+    point:{ x: 0, y: 0 }
   },
-  computed: {
-    isUrudoshi: function(){
-      if ((this.year%4 == 0) && (this.year%100 != 0) || (this.year%400 == 0)) {
-        return true;
-      }else{
-        return false;
-      }
+
+  created: function(){
+    addEventListener('mousemove', this.mousemoveHandler);
+  },
+  beforeDestroy: function(){
+    removeEventListener('mousemove', this.mousemoveHandler);
+  },
+  methods: {
+    mousemoveHandler: function($event) {
+      this.point.x = $event.clientX;
+      this.point.y = $event.clientY;
     }
   }
 });
