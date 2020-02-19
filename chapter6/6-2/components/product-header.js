@@ -11,7 +11,7 @@ var productHeader = {
         <div class="target">
           <label>
             <input type="checkbox"
-              v-bind:checked="showSaleItem" 
+              v-bind:checked="showSaleItem"
               v-on:change="$emit('showSaleItemChanged')"
             > セール対象</label>
           <label>
