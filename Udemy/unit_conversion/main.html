@@ -8,9 +8,12 @@
   <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
 <body>
-  
+
   <h2>unit conversion</h2>
   <div id="app">
+    <span v-cloak>
+      {{ km }}キロメートルは、{{ m }}メートルで、 {{ mm }}ミリです。
+    </span>
     <p>
       <input type="text" v-model:value="km">km
     </p>
