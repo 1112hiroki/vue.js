@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Udemy</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+
+  <div id="app">
+    <div>
+      <p>チェックボックス</p>
+      <input type="checkbox" id="checkbox" v-model="checked">
+      <label for="checkbox">{{ checked }}</label>
+    </div>
+    <div>
+      <p>ラジオボタン</p>
+      <input type="radio" id="red" value="Red" v-model="color">
+      <label for="red">Red</label>
+      <input type="radio" id="green" value="Green" v-model="color">
+      <label for="green">Green</label>
+      <input type="radio" id="blue" value="Blue" v-model="color">
+      <label for="blue">Blue</label>
+      <p>
+        {{ color }}
+      </p>
+    </div>
+    <div>
+      <p>セレクトボックス</p>
+      <select v-model="selected">
+        <option disable value="">Please select one</option>
+        <option>RED</option>
+        <option>Green</option>
+        <option>Blue</option>
+      </select>
+      <p>
+        {{ selected }}
+      </p>
+    </div>
+    <div>
+      <p>セレクトボックス（複数選択）</p>
+      <select v-model="selectes" multiple>
+        <option disable value="">Please select one</option>
+        <option>RED</option>
+        <option>Green</option>
+        <option>Blue</option>
+      </select>
+      <p>
+        {{ selectes }}
+      </p>
+    </div>
+    <div>
+      <p>ナンバー修飾子[number]</p>
+      <p>
+        <input type="number" v-model.number="age">
+      </p>
+      <p>
+        {{ age + 10 }}
+      </p>
+    </div>
+    <pre>{{ $data }}</pre>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
